@@ -13,7 +13,7 @@ export const Profile = ({
         <img
           src={avatar}
           alt="User avatar"
-          class="avatar" width="250"
+          class="avatar"  width="150"
         />
         <p class="name">{username}</p>
         <p class="tag">{tag}</p>
@@ -22,16 +22,16 @@ export const Profile = ({
 
       <ul class="stats">
         <li>
-          <span class="label">{stats.followers}</span>
-          <span class="quantity">1000</span>
+          <span class="label">Followers</span>
+          <span class="quantity">{stats.followers}</span>
         </li>
         <li>
-          <span class="label">{stats.views}</span>
-          <span class="quantity">2000</span>
+          <span class="label">Views</span>
+          <span class="quantity">{stats.views}</span>
         </li>
         <li>
-          <span class="label">{stats.likes}</span>
-          <span class="quantity">3000</span>
+          <span class="label">Likes</span>
+          <span class="quantity">{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -41,7 +41,7 @@ export const Profile = ({
   // відображається, якщо проп не надано.
 
 Profile.propTypes = {
-   username: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
