@@ -41,8 +41,7 @@ export const Profile = ({
   // відображається, якщо проп не надано.
 
 Profile.propTypes = {
-  // user: propTypes.shape({
-  username: PropTypes.string.isRequired,
+   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
@@ -51,6 +50,4 @@ Profile.propTypes = {
       views: PropTypes.number.isRequired,
       likes: PropTypes.number.isRequired,
     }),
-  // }) 
-
 };
