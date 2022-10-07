@@ -1,43 +1,34 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-export const Statistics = ({
-    data
-}) => {
+export const Statistics = ({title = '' , stats}) => {
     return (
         <section class="statistics">
-            <h2 class="title">Upload stats</h2>
+           {title && <h2 class="title">{title}</h2>}
 
             <ul class="stat-list">
-                <li class="item">
-                    <span class="label">.docx</span>
-                    <span class="percentage">4%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.mp3</span>
-                    <span class="percentage">14%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.pdf</span>
-                    <span class="percentage">41%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.mp4</span>
-                    <span class="percentage">12%</span>
-                </li>
+                {stats.map(item => (
+                    <li class="item" key={item.id}>
+                                <span class="label">{item.label}</span>
+                                <span class="percentage">{item.percentage}%</span>
+                    </li>)
+                )}
             </ul>
         </section>
     );
 };
-/*
+
+Statistics.defaultProps = {
+  title: '',
+}
+
 Statistics.propTypes = {
-   username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string,
-  stats:PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }),
-};*/
+    title : PropTypes.string,
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+        }).isRequired,
+    ).isRequired,
+};
