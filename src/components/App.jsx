@@ -8,10 +8,11 @@ import user from '../assets/user.json';
 import data from '../assets/data.json';
 import friends from '../assets/friends.json';
 import transactions from '../assets/transactions.json';
+import css from './App.module.css';
 
 export const App = () => {
   return (
-    <div>
+    <div className={css.account}>
         <Profile username={user.username}
                 tag={user.tag}
                 location={user.location}

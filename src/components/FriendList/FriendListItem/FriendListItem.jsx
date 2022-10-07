@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from "prop-types";
-//TODO!!! от пропа isOnline, должен меняться цвет фона span.status 
+
+import css from './FriendListItem.module.css'
+
 
 export const FriendListItem = ({ id, isOnline, avatar, name }) => (
-    <li class="item" key={id}>
-        <span class="status">{isOnline?'online':'offline'}</span>
-        <img class="avatar" src={avatar} alt="User avatar" width="48" />
-        <p class="name">{name}</p>
+  <li className={css.item} key={id}>
+    <span className={css.status} style={{ backgroundColor: isOnline ?'green': 'red' }}></span>
+    <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+    <p className={css.name}>{name}</p>
     </li>
 );
 
