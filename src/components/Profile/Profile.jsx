@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import css from './Profile.module.css';
 
@@ -7,15 +7,17 @@ export const Profile = ({
   username,
   tag,
   location,
-  avatar = "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
-  stats }) => {
+  avatar = 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
+  stats,
+}) => {
   return (
     <div className={css.profile}>
       <div className={css.description}>
         <img
           src={avatar}
           alt="User avatar"
-          className={css.avatar}  width="150"
+          className={css.avatar}
+          width="150"
         />
         <p className={css.name}>{username}</p>
         <p className={css.tag}>@{tag}</p>
@@ -40,16 +42,16 @@ export const Profile = ({
   );
 };
 //Ви можете об’єднати будь-яке з вищенаведеного за допомогою `isRequired`, щоб гарантувати попередження
-  // відображається, якщо проп не надано.
+// відображається, якщо проп не надано.
 
 Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
-  stats:PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }),
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
